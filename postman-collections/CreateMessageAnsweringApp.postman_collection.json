@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "b804470d-667c-42a1-ac04-12c2c06b7ac1",
+		"name": "AnsweringApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31646039"
+	},
+	"item": [
+		{
+			"name": "CreateNewMessage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unique_message\": \"6267gsw2gd828\",\r\n    \"file\": [\r\n        72,\r\n        101,\r\n        108,\r\n        108,\r\n        111,\r\n        32,\r\n        87,\r\n        111,\r\n        114,\r\n        108,\r\n        100,\r\n        33\r\n    ],\r\n    \"type_file\": \"pdf\",\r\n    \"group_users\": 1,\r\n    \"template_id\": 2,\r\n    \"data\": {\r\n        \"$name\": \"Anna\",\r\n        \"$money\": \"3000\",\r\n        \"$period\": \"5\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/answering/messages/6267gsw2gd828",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"answering",
+						"messages",
+						"6267gsw2gd828"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,27 @@
+Переменные окружения задаются в консоле или IDE
+
+export DB_HOST=localhost
+export DB_USERNAME=postgres
+export DB_PASSWORD=postgres
+export DB_NAME=postgres
+export DB_LOCAL_PORT=5432
+export DB_DOCKER_PORT=5432
+export MQ_USERNAME=rabbitmq
+export MQ_PASSWORD=rabbitmq
+export MQ_LOCAL_PORT=5672
+export MQ_DOCKER_PORT=5672
+export MQ_MESSAGE_QUEUE=message_queue
+export MQ_MAIL_QUEUE=mail_queue
+export MQ_STATUS_QUEUE=status_queue
+export MQ_EXCHANGE=messageExchange
+export MQ_MESSAGE_ROUTING_KEY=messageRoutingKey
+export MQ_MAIL_ROUTING_KEY=mailRoutingKey
+export MQ_STATUS_ROUTING_KEY=statusRoutingKey
+export MQ_HOST=localhost
+export MQ_VIRTUAL_HOST=vhost
+
+Перейти в папку проекта
+cd /d/JAVA_PROJECTS/message-sender-app/docker-compose
+
+Выпонить комманду для создания докер имеджей:
+docker-compose up -d

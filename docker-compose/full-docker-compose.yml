@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    container_name: message-sender-db
+    environment:
+      - POSTGRES_USER=$DB_USERNAME
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_NAME
+    ports:
+      - "$DB_LOCAL_PORT:$DB_DOCKER_PORT"
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    container_name: message-sender-rabbitmq
+    ports:
+      - "$MQ_LOCAL_PORT:$MQ_DOCKER_PORT"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: $MQ_USERNAME
+      RABBITMQ_DEFAULT_PASS: $MQ_PASSWORD
+  application:
+    build:
+      context: ../answering-module/docker/
+      dockerfile: Dockerfile

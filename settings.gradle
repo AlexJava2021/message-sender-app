@@ -1,0 +1,3 @@
+rootProject.name = 'message-sender-app'
+include 'answering-module'
+
